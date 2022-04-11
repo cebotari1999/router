@@ -1,24 +1,21 @@
 # router
-README
 
-Cebotari Zinaida, 322CA
-
-    Structura route_table este folosita pentru a stoca tabela de rutare a roterului.
+Structura route_table este folosita pentru a stoca tabela de rutare a roterului.
 Functia read_table se preocupa de parsarea tabelei de rutare din fisierul primit ca
 parametru in linia de comanda. Se stocheaza prefixul, next_hop-ul, masca si interfata
 pentru fiecare intrare din tabela de rutare a fisierului.
 
-    Functia find_ip cauta intrarea cu prefixul cel mai mare din tabela de rutare pe care
+Functia find_ip cauta intrarea cu prefixul cel mai mare din tabela de rutare pe care
 face match IP-ul primit ca parametru. Am folosit binary search pentru ca are 
 complexitatea O(logn), preventiv am sortat tabela de rutare. Daca nu se gaseste adresa
 cautata, functia returneaza -1.
 
-    Structura arp_table este folosita pentru a stoca adresele IP si MAC-urile acestora. 
+Structura arp_table este folosita pentru a stoca adresele IP si MAC-urile acestora. 
 Functia add_arp_table adauga o intrare noua in tabela arp la finalul acesteia. Iar
 functia find_mac retuneaza pozitia din tabela la care se gaseste adesa IP primita ca 
 parametru. Daca nu contine o astfel de adresa returneaza -1.
 
- La inceputul programului se aloca tabela de rutare si tabela arp. Se parseaza tabela
+La inceputul programului se aloca tabela de rutare si tabela arp. Se parseaza tabela
 de rutare din fisierul numele caruia e primit ca parametru. Apoi intr-o bucla while(1) 
 se receptioneaza pachete. Se verifica daca pachetul este:
 
